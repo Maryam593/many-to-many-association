@@ -25,6 +25,19 @@ const userController = {
             res.status(500).json({message: "Internal server error"})
         }
     },
+    create: (req,res)=> {
+        try {
+            const payload = req.body;
+        userData.push(payload);
+        res.status(200).json({message:"created", data: userData});
+        } catch (error) {
+            res.status(500).json({message: "Internal server error"});
+        }
+    },
+    Update : (req,res)=> {
+        const {id} = req.params;
+        const payload = req.body;
+    }
 
 }
 
